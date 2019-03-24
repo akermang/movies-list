@@ -67,6 +67,10 @@
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+
+    .add-fab {
+        left: 80%;
+    }
 }
 
 @keyframes App-logo-spin {

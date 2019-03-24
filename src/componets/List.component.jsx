@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { fetchData } from "../services/api.service.js";
-import { List, Fab, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { List, Fab, ListItem, ListItemIcon, ListItemText, CircularProgress } from "@material-ui/core";
 import { formatTitle, validData, isMovieEdited } from '../services/data.service';
 import EditMovieComponent from './EditMovie.Component.jsx';
 import AddIcon from '@material-ui/icons/Add';
@@ -117,7 +117,7 @@ class ListComponent extends Component {
       <div className="container">
         <div className={"main-container"}>
 
-          {isLoading ? <div className={"loader"}>Loading...</div> : null}
+          {isLoading ? <div className={"loader"}><CircularProgress disableShrink />.</div> : null}
 
           <ModalComponent
             noCancel={() => this.canselDelete()}
