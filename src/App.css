@@ -46,6 +46,10 @@
     color: #737b8b;
 }
 
+.movies-list {
+    max-width: 970px;
+}
+
 .add-fab {
     position: fixed!important;
     bottom: 5%;
