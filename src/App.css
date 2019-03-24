@@ -1,0 +1,81 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+}
+
+.header-component {
+    background-color: #737b8b;
+    color: #fff;
+    font-size: calc(8px + 2vmin);
+    padding: 5px;
+    text-transform: lowercase;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-component::first-letter {
+    text-transform: capitalize;
+}
+
+.loader {
+    position: fixed;
+    top: 96px;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: calc(8px + 2vmin);
+    color: rgb(24, 24, 54);
+    padding: 16px;
+}
+
+.main-container ul {
+    margin-top: 16px;
+}
+
+.App-link {
+    color: #737b8b;
+}
+
+.add-fab {
+    position: fixed!important;
+    bottom: 5%;
+    left: 4%;
+    z-index: 1;
+}
+
+.icons-wrap {
+    display: flex;
+    width: 110px;
+}
+
+.MuiListItemText-root-62:first-child {
+    width: 100%;
+}
+
+@media(max-width:500px) {
+    .movies-list li {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+   
