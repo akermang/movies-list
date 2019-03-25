@@ -14,7 +14,7 @@ const ModalComponent = ({ noCancel, onAction, title,text, open }) => (
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle color="#0e5173" id="alert-dialog-title">{title}</DialogTitle>
+            <DialogTitle  id="alert-dialog-title">{title}</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
                 {text}

@@ -58,12 +58,12 @@
     color: #700000;
 }
 
-h2.MuiTypography-root-78.MuiTypography-title-84{
+#form-dialog-title h2 {
     color: #1e2e85;
 }
 
-.movies-list li span.MuiTypography-root-78 {
-    color: #0e5173;
+.movies-list li span.MuiTypography-root-78.MuiListItemText-primary-75 {
+    color: #0e5173!important;
 }
 
 .add-fab {
