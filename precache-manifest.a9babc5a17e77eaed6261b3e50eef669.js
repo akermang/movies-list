@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/movies/static/js/runtime~main.712e9881.js"
   },
   {
-    "revision": "836ae51865ef48a7420a",
+    "revision": "75d0d4759826a9fc1be0",
     "url": "/movies/static/js/main.b2dda005.chunk.js"
   },
   {
@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/movies/static/js/2.89c0bf1d.chunk.js"
   },
   {
-    "revision": "836ae51865ef48a7420a",
-    "url": "/movies/static/css/main.32bfffdd.chunk.css"
+    "revision": "75d0d4759826a9fc1be0",
+    "url": "/movies/static/css/main.8b169458.chunk.css"
   },
   {
-    "revision": "061ead994a45f7493ebcd76b6a4c5d69",
+    "revision": "3a1cfc43dbb68de4c9be5ec8a9f0a93c",
     "url": "/movies/index.html"
   }
 ];
