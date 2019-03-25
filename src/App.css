@@ -96,13 +96,13 @@
     }
 }
 
-@media(max-width:440) {
+@media(max-width:440px) {
     .movies-list li span.jss85 {
         min-width: 265px!important;
     }
 }
 
-@media(max-width:350) {
+@media(max-width:350px) {
     .movies-list li span.jss85 {
         min-width: 215px!important;
     }
