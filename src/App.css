@@ -88,11 +88,23 @@
     }
 
     .movies-list li span.jss85 {
-        width: 100%!important;
+        min-width: 370px!important;
     }
 
     .add-fab {
         left: 80%;
+    }
+}
+
+@media(max-width:440) {
+    .movies-list li span.jss85 {
+        min-width: 265px!important;
+    }
+}
+
+@media(max-width:350) {
+    .movies-list li span.jss85 {
+        min-width: 215px!important;
     }
 }
 
