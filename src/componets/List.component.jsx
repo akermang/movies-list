@@ -137,7 +137,6 @@ class ListComponent extends Component {
             message={message}
           />}
 
-
           <Fab
             className="fab add-fab"
             size="medium"
