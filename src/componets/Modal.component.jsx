@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const ModalComponent = ({ noCancel, onAction, title,text, open }) => (
+const ModalComponent = ({ noCancel, onAction, title, text, open }) => (
     <div className={"modal-component"}>
         <Dialog
             open={open}
@@ -14,22 +14,21 @@ const ModalComponent = ({ noCancel, onAction, title,text, open }) => (
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle  id="alert-dialog-title">{title}</DialogTitle>
+            <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                {text}
-            </DialogContentText>
+                    {text}
+                </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={noCancel} color="primary">
                     cancel
-            </Button>
-                <Button onClick={()=>onAction()} color="secondary" autoFocus>
+                </Button>
+                <Button onClick={() => onAction()} color="secondary" autoFocus>
                     ok
-            </Button>
+                </Button>
             </DialogActions>
         </Dialog>
-
     </div>
 );
 

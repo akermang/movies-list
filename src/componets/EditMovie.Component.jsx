@@ -23,7 +23,7 @@ class EditMovieComponent extends React.Component {
 
     handleClose() {
         this.setState({ open: false });
-        this.props.onCencel()
+        this.props.onCencel();
     };
 
     handleSave() {

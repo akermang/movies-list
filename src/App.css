@@ -32,7 +32,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     font-size: calc(8px + 2vmin);
     color: rgb(24, 24, 54);
     padding: 16px;
@@ -88,7 +87,7 @@
         justify-content: flex-start;
     }
 
-    .movies-list li div.MuiListItemText-root-72 {
+    .movies-list li span.jss85 {
         width: 100%;
     }
 

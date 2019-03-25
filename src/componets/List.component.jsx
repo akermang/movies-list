@@ -151,19 +151,19 @@ class ListComponent extends Component {
           </Fab>
 
           <List className="movies-list">
-            {list.map(hit => (
-              <ListItem className="list-item" key={hit.imdbID}>
-                <ListItemText primary={`${hit.Title}  | ${hit.Year}`} secondary={`
-                  ${hit.Runtime} |
-                  ${hit.Genre} |
-                  Director: ${hit.Director} |
-                  ${hit.imdbID}`} />
-                <ListItemIcon button="true" onClick={() => this.handleDelete(hit)}>
+            {list.map(movie => (
+              <ListItem className="list-item" key={movie.imdbID}>
+                <ListItemText primary={`${movie.Title}  | ${movie.Year}`} secondary={`
+                  ${movie.Runtime} |
+                  ${movie.Genre} |
+                  Director: ${movie.Director} |
+                  ${movie.imdbID}`} />
+                <ListItemIcon button="true" onClick={() => this.handleDelete(movie)}>
                   <Fab size="small" color="primary" aria-label="Delete" className="fab delete-fab" style={{ backgroundColor: "#af3a3a" }}>
                     <DeleteIcon />
                   </Fab>
                 </ListItemIcon>
-                <ListItemIcon button="true" onClick={() => this.onEdit(hit)}>
+                <ListItemIcon button="true" onClick={() => this.onEdit(movie)}>
                   <Fab size="small" color="primary" aria-label="Edit" className="fab">
                     <EditIcon />
                   </Fab>
