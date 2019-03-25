@@ -98,7 +98,7 @@
 
 @media(max-width:440px) {
     .movies-list li span.jss85 {
-        min-width: 265px!important;
+        min-width: 300px!important;
     }
 }
 
