@@ -88,7 +88,7 @@
     }
 
     .movies-list li span.jss85 {
-        width: 100%;
+        width: 100%!important;
     }
 
     .add-fab {
