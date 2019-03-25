@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderComponent = ({ name }) => (
+const HeaderComponent = () => (
   <div className={"header-component"}>My Movies list</div>
 );
 

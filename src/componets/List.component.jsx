@@ -23,6 +23,7 @@ class ListComponent extends Component {
       selectedMovie: null
     };
   }
+
   componentDidMount() {
     this.getData();
   }
@@ -43,8 +44,8 @@ class ListComponent extends Component {
       .catch(error => this.setState({ error, isLoading: false }));
   }
 
-  onEdit(element) {
-    this.setState({ editMovie: element });
+  onEdit(movie) {
+    this.setState({ editMovie: movie });
     this.setState({ isEditMode: true })
     this.setState({ openEdit: true })
   }
@@ -76,6 +77,7 @@ class ListComponent extends Component {
       this.cancelEdit();
       return
     }
+
     let validation = validData(movie, this.state.list);
     if (validation === true) {
       this.updateList(movie);
@@ -83,6 +85,7 @@ class ListComponent extends Component {
       this.cancelEdit();
       return
     }
+
     this.setState({ message: validation });
   }
 
@@ -122,12 +125,13 @@ class ListComponent extends Component {
           <ModalComponent
             noCancel={() => this.canselDelete()}
             onAction={() => this.deleteMovie(selectedMovie)}
-            title={selectedMovie ? `delete: ${selectedMovie.Title}` : null}
+            title={selectedMovie ? `delete: ${selectedMovie.Title}..?` : null}
             text={selectedMovie ? `are you ok with it?` : null}
             open={this.state.openModal}
           />
 
-          {isEditMode && <EditMovieComponent
+          {isEditMode &&
+          <EditMovieComponent
             editMovie={editMovie}
             open={openEdit}
             onCencel={() => this.cancelEdit()}
@@ -135,18 +139,20 @@ class ListComponent extends Component {
             message={message}
           />}
 
-          <Fab size="medium"
+
+          <Fab
+            className="fab add-fab"
+            size="medium"
             color="primary"
             aria-label="Add"
-            className="fab add-fab"
             style={{ backgroundColor: "green" }}
           >
             <AddIcon onClick={() => this.handleAddNew()} />
-          </Fab> 
-          
+          </Fab>
+
           <List className="movies-list">
             {list.map(hit => (
-              <ListItem className= "list-item" key={hit.imdbID}>
+              <ListItem className="list-item" key={hit.imdbID}>
                 <ListItemText primary={`${hit.Title}  | ${hit.Year}`} secondary={`
                   ${hit.Runtime} |
                   ${hit.Genre} |

@@ -50,6 +50,22 @@
     max-width: 970px;
 }
 
+.movies-list li {
+    border-bottom: 1px solid #eaeaea;
+}
+
+#alert-dialog-title h2 {
+    color: #700000;
+}
+
+h2.MuiTypography-root-78.MuiTypography-title-84{
+    color: #1e2e85;
+}
+
+.movies-list li span.MuiTypography-root-78 {
+    color: #0e5173;
+}
+
 .add-fab {
     position: fixed!important;
     bottom: 5%;
@@ -70,6 +86,10 @@
     .movies-list li {
         flex-wrap: wrap;
         justify-content: flex-start;
+    }
+
+    .movies-list li div.MuiListItemText-root-72 {
+        width: 100%;
     }
 
     .add-fab {

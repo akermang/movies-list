@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch';
-
 const API = 'https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?';
 
 export const fetchData = (query) => {

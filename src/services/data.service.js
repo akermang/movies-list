@@ -12,11 +12,10 @@ const yearValidation = (year) => {
     if ((year < 1920) || (year > current_year)) {
         return `Year should be in between 1920 to.. ${current_year}`;
     }
-    return null;
 }
 
 const isTitleValid = (obj, list) => {
-    for(let i = 0; i < list.length; i++){
+    for (let i = 0; i < list.length; i++) {
         if (list[i].Title === obj.Title && list[i].imdbID !== obj.imdbID) {
             return "same movie title is already exist"
         }
@@ -50,25 +49,14 @@ export const formatTitle = title => {
         .join(" ");
 }
 
-export const isMovieEdited = (movie, editMovie)=>{
+export const isMovieEdited = (movie, editMovie) => {
     return movie.Title === editMovie.Title &&
-    movie.Year === editMovie.Year && movie.Runtime === editMovie.Runtime &&
-    movie.Genre === editMovie.Genre && movie.Director === editMovie.Director;
+        movie.Year === editMovie.Year &&
+        movie.Runtime === editMovie.Runtime &&
+        movie.Genre === editMovie.Genre &&
+        movie.Director === editMovie.Director;
 }
 
 
 
-// export const arrayToObject = (array) =>
-//     array.reduce((obj, item) => {
-//         obj[item.imdbID] = item
-//         return obj
-//     }, {})
 
-// export const formatData = (list) => {
-//     let formated = JSON.parse(JSON.stringify(list));
-//     formated = formated.map((val) => {
-//         val.Title = formatTitle(val.Title);
-//         return val;
-//     });
-//     return formated
-// }
