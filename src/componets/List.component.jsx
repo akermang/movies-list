@@ -85,7 +85,6 @@ class ListComponent extends Component {
       this.cancelEdit();
       return
     }
-
     this.setState({ message: validation });
   }
 
@@ -95,7 +94,6 @@ class ListComponent extends Component {
     this.setState({ editMovie: newMovie });
     this.setState({ isEditMode: true })
     this.setState({ openEdit: true })
-
   }
 
   handleDelete(movie) {
