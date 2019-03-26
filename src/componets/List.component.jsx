@@ -60,7 +60,7 @@ class ListComponent extends Component {
     let mov = list.find(((mov) => mov.imdbID === movie.imdbID));
     let index = list.indexOf(mov);
     index === -1 ? list.unshift(movie) : list.splice(index, 1, movie);
-    this.setState({ list: list });
+    this.setState({ list });
   }
 
   removeMovieFromList(movie) {
@@ -68,7 +68,7 @@ class ListComponent extends Component {
     let mov = list.find(((mov) => mov.imdbID === movie.imdbID));
     let index = list.indexOf(mov);
     index >= 0 ? list.splice(index, 1) : movie = {};
-    this.setState({ list: list });
+    this.setState({ list });
   }
 
   saveEdit(movie) {
@@ -129,13 +129,13 @@ class ListComponent extends Component {
           />
 
           {isEditMode &&
-          <EditMovieComponent
-            editMovie={editMovie}
-            open={openEdit}
-            onCencel={() => this.cancelEdit()}
-            onSave={movie => this.saveEdit(movie)}
-            message={message}
-          />}
+            <EditMovieComponent
+              editMovie={editMovie}
+              open={openEdit}
+              onCencel={() => this.cancelEdit()}
+              onSave={movie => this.saveEdit(movie)}
+              message={message}
+            />}
 
           <Fab
             className="fab add-fab"
