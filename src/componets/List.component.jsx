@@ -118,7 +118,7 @@ class ListComponent extends Component {
       <div className="container">
         <div className={"main-container"}>
 
-          {isLoading ? <div className={"loader"}><CircularProgress disableShrink />.</div> : null}
+          {isLoading ? <div className={"loader"}><CircularProgress disableShrink /></div> : null}
 
           <ModalComponent
             noCancel={() => this.canselDelete()}
