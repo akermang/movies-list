@@ -87,24 +87,13 @@
         justify-content: flex-start;
     }
 
+    .MuiTypography-subheading-85,
     .movies-list li span.jss85 {
-        min-width: 370px!important;
+        min-width: 73vw;
     }
 
     .add-fab {
         left: 80%;
-    }
-}
-
-@media(max-width:440px) {
-    .movies-list li span.jss85 {
-        min-width: 305px!important;
-    }
-}
-
-@media(max-width:350px) {
-    .movies-list li span.jss85 {
-        min-width: 215px!important;
     }
 }
 
