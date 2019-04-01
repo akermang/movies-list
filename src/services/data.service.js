@@ -14,9 +14,9 @@ const yearValidation = (year) => {
     }
 }
 
-const isTitleValid = (obj, list) => {
+const isTitleValid = ({ Title, imdbID }, list) => {
     for (let i = 0; i < list.length; i++) {
-        if (list[i].Title === obj.Title && list[i].imdbID !== obj.imdbID) {
+        if (list[i].Title === Title && list[i].imdbID !== imdbID) {
             return "same movie title is already exist"
         }
     }
@@ -50,13 +50,12 @@ export const formatTitle = title => {
 }
 
 export const isMovieEdited = (movie, editMovie) => {
-    return movie.Title === editMovie.Title &&
-        movie.Year === editMovie.Year &&
-        movie.Runtime === editMovie.Runtime &&
-        movie.Genre === editMovie.Genre &&
-        movie.Director === editMovie.Director;
+    const keys = Object.keys(movie);
+    for (let i = 0; i < keys.length; i++) {
+        if (movie[keys[i]] !== editMovie[keys[i]]) return true
+    }
+    return false;
 }
-
 
 
 

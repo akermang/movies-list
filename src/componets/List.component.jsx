@@ -45,71 +45,62 @@ class ListComponent extends Component {
   }
 
   onEdit(movie) {
-    this.setState({ editMovie: movie });
-    this.setState({ isEditMode: true })
-    this.setState({ openEdit: true })
+    this.setState({ editMovie: movie, isEditMode: true, openEdit: true });
   }
 
   cancelEdit() {
-    this.setState({ message: null });
-    this.setState({ isEditMode: false });
+    this.setState({ message: null, isEditMode: false });
   }
 
-  updateList(movie) {
+  updateList(movie, type = "update") {
     let list = this.state.list;
     let mov = list.find(((mov) => mov.imdbID === movie.imdbID));
     let index = list.indexOf(mov);
-    index === -1 ? list.unshift(movie) : list.splice(index, 1, movie);
-    this.setState({ list });
-  }
-
-  removeMovieFromList(movie) {
-    let list = this.state.list;
-    let mov = list.find(((mov) => mov.imdbID === movie.imdbID));
-    let index = list.indexOf(mov);
-    index >= 0 ? list.splice(index, 1) : movie = {};
+    switch (type) {
+      case "delete":
+        index >= 0 ? list.splice(index, 1) : movie = {};
+        break;
+      default:
+        index === -1 ? list.unshift(movie) : list.splice(index, 1, movie);
+        break;
+    }
     this.setState({ list });
   }
 
   saveEdit(movie) {
-    let notEdited = isMovieEdited(movie, this.state.editMovie);
-    if (notEdited) {
+    if (!isMovieEdited(movie, this.state.editMovie)) {
       this.cancelEdit();
       return
     }
 
     let validation = validData(movie, this.state.list);
-    if (validation === true) {
+    if ( validData(movie, this.state.list) === true) {
       this.updateList(movie);
-      this.setState({ message: null })
+      this.setState({ message: null });
       this.cancelEdit();
       return
-    }
+    };
+    
     this.setState({ message: validation });
   }
 
   handleAddNew() {
     let imdbID = uniqid();
-    let newMovie = { imdbID: imdbID }
-    this.setState({ editMovie: newMovie });
-    this.setState({ isEditMode: true })
-    this.setState({ openEdit: true })
+    let newMovie = { imdbID: imdbID };
+    this.setState({ editMovie: newMovie, isEditMode: true, openEdit: true });
   }
 
   handleDelete(movie) {
-    this.setState({ selectedMovie: movie })
-    this.setState({ openModal: true })
+    this.setState({ selectedMovie: movie, openModal: true });
   }
 
   deleteMovie(movie) {
-    this.removeMovieFromList(movie);
-    this.setState({ selectedMovie: {} });
-    this.setState({ openModal: false });
+    this.updateList(movie, "delete");
+    this.setState({ selectedMovie: {}, openModal: false });
   }
 
   canselDelete() {
-    this.setState({ openModal: false });
-    this.setState({ selectedMovie: {} })
+    this.setState({ openModal: false, selectedMovie: {} });
   }
 
   render() {
@@ -120,13 +111,13 @@ class ListComponent extends Component {
 
           {isLoading ? <div className={"loader"}><CircularProgress disableShrink /></div> : null}
 
-          <ModalComponent
+          {selectedMovie && <ModalComponent
             noCancel={() => this.canselDelete()}
             onAction={() => this.deleteMovie(selectedMovie)}
-            title={selectedMovie ? `delete: ${selectedMovie.Title}..?` : null}
-            text={selectedMovie ? `are you ok with it?` : null}
+            title={` ${selectedMovie.Title}`}
+            text={`Delete this movie?`}
             open={this.state.openModal}
-          />
+          />}
 
           {isEditMode &&
             <EditMovieComponent
